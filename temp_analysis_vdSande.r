@@ -1,5 +1,6 @@
 library('tidyverse')
 library(dplyr)
+library('maps')
 #Read in and check out the data
 temp <- read.csv('surfacetemp.csv')
 summary(temp)

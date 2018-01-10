@@ -17,4 +17,6 @@ movies$release_date <- as.Date(movies$release_date, '%Y-%m-%d')
 movies$budget <- as.numeric(as.character(movies$budget))
 #Filter out the movies for which a budget was specified
 movies.ofinterest <- movies %>% filter(budget > 10000 & budget < 3e+08 & release_date > '1940-01-01' & vote_count > 20)
-ggplot(data = movies.ofinterest) + geom_point(mapping = aes(x=release_date, y=budget, color=vote_average))
+ggplot(data = movies.ofinterest) +
+  geom_point(mapping = aes(x=release_date, y=budget, color=vote_average)) +
+  labs(x = "Release Date", y = "Budget [$]", color = "Average Vote\n")
