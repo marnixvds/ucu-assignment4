@@ -35,6 +35,7 @@ temp.reduced <- unique(temp.ofinterest[,c(1, 6:9)])
 #Merge the two datasets
 temp.plot <- merge(temp.ofinterest.percity, temp.reduced, by='citycountry')
 
+#Now make a plot that maps the temperature data on top of a world map
 ggplot(data = temp.plot) +
   geom_polygon(data = map_data('world'), mapping = aes(x = long, y = lat, group=group), fill = NA, colour='black') +
   geom_point(mapping = aes(x=lng, y=lat, color=temp2000, size=pop_2017)) +
